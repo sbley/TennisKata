@@ -3,7 +3,7 @@ package de.saxsys.dojo.tennis;
 public class TennisGame {
 
 	private static final String[] SCORES = new String[] { "Love", "Fifteen",
-			"Thirty" };
+			"Thirty", "Fourty" };
 	private int player1Score = 0;
 	private int player2Score = 0;
 
