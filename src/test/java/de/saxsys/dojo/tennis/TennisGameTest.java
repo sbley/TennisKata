@@ -10,8 +10,7 @@ public class TennisGameTest {
 
 	@Test
 	public void getScore_returnsLoveAllAfterGameStarts() throws Exception {
-		assertThat(gameBetweenP1AndP2().getScore(),
-				is(equalTo("Love all")));
+		assertThat(gameBetweenP1AndP2().getScore(), is(equalTo("Love all")));
 	}
 
 	@Test
@@ -80,6 +79,16 @@ public class TennisGameTest {
 		playUntilDeuce(game);
 		game.player2Scores();
 		assertThat(game.getScore(), is(equalTo("Advantage P2")));
+	}
+
+	@Test
+	public void getScore_returnsP1WinsAfterP1ScoresFourTimes() throws Exception {
+		TennisGame game = gameBetweenP1AndP2();
+		game.player1Scores();
+		game.player1Scores();
+		game.player1Scores();
+		game.player1Scores();
+		assertThat(game.getScore(), is(equalTo("P1 wins")));
 	}
 
 	private TennisGame gameBetweenP1AndP2() {

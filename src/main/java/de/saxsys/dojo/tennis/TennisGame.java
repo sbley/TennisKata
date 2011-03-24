@@ -23,6 +23,9 @@ public class TennisGame {
 	}
 
 	public String getScore() {
+		if (isWinPlayer1()) {
+			return player1 + " wins";
+		}
 		if (isDeuce()) {
 			return "Deuce";
 		}
@@ -38,6 +41,10 @@ public class TennisGame {
 			return player1ScoreStr + " all";
 		}
 		return player1ScoreStr + " " + player2ScoreStr;
+	}
+
+	private boolean isWinPlayer1() {
+		return player1Score == 4 && player2Score < 3;
 	}
 
 	private boolean isDeuce() {
