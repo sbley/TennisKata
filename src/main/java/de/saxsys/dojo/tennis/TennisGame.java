@@ -1,5 +1,8 @@
 package de.saxsys.dojo.tennis;
 
+/**
+ * @author stefan
+ */
 public class TennisGame {
 
 	private static final String[] SCORES = new String[] { "Love", "Fifteen",
