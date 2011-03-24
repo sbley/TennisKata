@@ -54,4 +54,17 @@ public class TennisGameTest {
 		game.player2Scores();
 		assertThat(game.getScore(), is(equalTo("Fourty Fifteen")));
 	}
+
+	@Test
+	public void getScore_returnsDeuceAfterBothScoreThreeTimes()
+			throws Exception {
+		TennisGame game = new TennisGame();
+		game.player1Scores();
+		game.player2Scores();
+		game.player2Scores();
+		game.player1Scores();
+		game.player1Scores();
+		game.player2Scores();
+		assertThat(game.getScore(), is(equalTo("Deuce")));
+	}
 }
