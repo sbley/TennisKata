@@ -16,15 +16,23 @@ public class TennisGame {
 	}
 
 	public String getScore() {
-		if (player1Score == 3 && player2Score == 3) {
+		if (isDeuce()) {
 			return "Deuce";
 		}
 		String player1ScoreStr = asString(player1Score);
 		String player2ScoreStr = asString(player2Score);
-		if (player1Score == player2Score) {
+		if (haveEqualScore()) {
 			return player1ScoreStr + " all";
 		}
 		return player1ScoreStr + " " + player2ScoreStr;
+	}
+
+	private boolean isDeuce() {
+		return player1Score == 3 && player2Score == 3;
+	}
+
+	private boolean haveEqualScore() {
+		return player1Score == player2Score;
 	}
 
 	private static String asString(int score) {
