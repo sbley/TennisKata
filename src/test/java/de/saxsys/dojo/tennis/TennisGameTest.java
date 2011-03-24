@@ -19,4 +19,12 @@ public class TennisGameTest {
 		game.player1Scores();
 		assertThat(game.getScore(), is(equalTo("Fifteen Love")));
 	}
+
+	@Test
+	public void getScore_returnsFifteenAllAfterBothScoreOnce() throws Exception {
+		TennisGame game = new TennisGame();
+		game.player1Scores();
+		game.player2Scores();
+		assertThat(game.getScore(), is(equalTo("Fifteen all")));
+	}
 }
