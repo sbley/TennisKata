@@ -7,17 +7,6 @@ public class TennisGame {
 	private int player1Score = 0;
 	private int player2Score = 0;
 
-	public String getScore() {
-		String player1ScoreStr = "Love";
-		String player2ScoreStr = "Love";
-		player1ScoreStr = SCORES[player1Score];
-		player2ScoreStr = SCORES[player2Score];
-		if (player1Score == player2Score) {
-			return player1ScoreStr + " all";
-		}
-		return player1ScoreStr + " " + player2ScoreStr;
-	}
-
 	public void player1Scores() {
 		player1Score++;
 	}
@@ -26,4 +15,16 @@ public class TennisGame {
 		player2Score++;
 	}
 
+	public String getScore() {
+		String player1ScoreStr = asString(player1Score);
+		String player2ScoreStr = asString(player2Score);
+		if (player1Score == player2Score) {
+			return player1ScoreStr + " all";
+		}
+		return player1ScoreStr + " " + player2ScoreStr;
+	}
+
+	private static String asString(int score) {
+		return SCORES[score];
+	}
 }
