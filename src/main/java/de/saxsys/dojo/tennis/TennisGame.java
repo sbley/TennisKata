@@ -38,12 +38,10 @@ public class TennisGame {
 		if (isAdvantagePlayer2()) {
 			return "Advantage " + player2;
 		}
-		String player1ScoreStr = asString(player1Score);
-		String player2ScoreStr = asString(player2Score);
 		if (haveEqualScore()) {
-			return player1ScoreStr + " all";
+			return asString(player1Score) + " all";
 		}
-		return player1ScoreStr + " " + player2ScoreStr;
+		return asString(player1Score) + " " + asString(player2Score);
 	}
 
 	private boolean isWinPlayer1() {
