@@ -26,6 +26,9 @@ public class TennisGame {
 		if (isWinPlayer1()) {
 			return player1 + " wins";
 		}
+		if (isWinPlayer2()) {
+			return player2 + " wins";
+		}
 		if (isDeuce()) {
 			return "Deuce";
 		}
@@ -45,6 +48,10 @@ public class TennisGame {
 
 	private boolean isWinPlayer1() {
 		return player1Score == 4 && player2Score < 3;
+	}
+
+	private boolean isWinPlayer2() {
+		return player2Score == 4 && player1Score < 3;
 	}
 
 	private boolean isDeuce() {

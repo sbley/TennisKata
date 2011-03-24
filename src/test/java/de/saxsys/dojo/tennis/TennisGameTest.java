@@ -91,6 +91,19 @@ public class TennisGameTest {
 		assertThat(game.getScore(), is(equalTo("P1 wins")));
 	}
 
+	@Test
+	public void getScore_returnsP2WinsAfterP1ScoresTwiceAndP2ScoresFourTimes()
+			throws Exception {
+		TennisGame game = gameBetweenP1AndP2();
+		game.player1Scores();
+		game.player1Scores();
+		game.player2Scores();
+		game.player2Scores();
+		game.player2Scores();
+		game.player2Scores();
+		assertThat(game.getScore(), is(equalTo("P2 wins")));
+	}
+
 	private TennisGame gameBetweenP1AndP2() {
 		return new TennisGame("P1", "P2");
 	}
