@@ -47,7 +47,7 @@ public class TennisGame {
 	}
 
 	private boolean isWinPlayer1() {
-		return player1Score == 4 && player2Score < 3 || player1Score > 4;
+		return player1Score >= 4 && player1Score - player2Score >= 2;
 	}
 
 	private boolean isWinPlayer2() {
@@ -59,7 +59,7 @@ public class TennisGame {
 	}
 
 	private boolean isAdvantagePlayer1() {
-		return player1Score == 4 && player2Score == 3;
+		return player1Score >= 4 && (player1Score - player2Score) == 1;
 	}
 
 	private boolean isAdvantagePlayer2() {
