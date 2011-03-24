@@ -24,7 +24,7 @@ public class TennisGame {
 		if (isDeuce()) {
 			return "Deuce";
 		}
-		if (player1Score == 4 && player2Score == 3) {
+		if (isAdvantagePlayer1()) {
 			return "Advantage " + player1;
 		}
 		String player1ScoreStr = asString(player1Score);
@@ -36,7 +36,11 @@ public class TennisGame {
 	}
 
 	private boolean isDeuce() {
-		return player1Score == 3 && player2Score == 3;
+		return player1Score == 3 && haveEqualScore();
+	}
+
+	private boolean isAdvantagePlayer1() {
+		return player1Score == 4 && player2Score == 3;
 	}
 
 	private boolean haveEqualScore() {
