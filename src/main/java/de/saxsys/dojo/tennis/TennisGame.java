@@ -55,7 +55,7 @@ public class TennisGame {
 	}
 
 	private boolean isDeuce() {
-		return player1Score == 3 && haveEqualScore();
+		return player1Score >= 3 && haveEqualScore();
 	}
 
 	private boolean isAdvantagePlayer1() {
