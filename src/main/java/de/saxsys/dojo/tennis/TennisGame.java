@@ -2,25 +2,30 @@ package de.saxsys.dojo.tennis;
 
 public class TennisGame {
 
-	private int player1Scores = 0;
-	private int player2Scores = 0;
+	private int player1Score = 0;
+	private int player2Score = 0;
 
 	public String getScore() {
-		if (player1Scores > 0) {
-			if (player2Scores > 0) {
-				return "Fifteen all";
-			}
-			return "Fifteen Love";
+		String player1ScoreStr = "Love";
+		String player2ScoreStr = "Love";
+		if (player1Score > 0) {
+			player1ScoreStr = "Fifteen";
 		}
-		return "Love all";
+		if (player2Score > 0) {
+			player2ScoreStr = "Fifteen";
+		}
+		if (player1Score == player2Score) {
+			return player1ScoreStr + " all";
+		}
+		return player1ScoreStr + " " + player2ScoreStr;
 	}
 
 	public void player1Scores() {
-		player1Scores++;
+		player1Score++;
 	}
 
 	public void player2Scores() {
-		player2Scores++;
+		player2Score++;
 	}
 
 }
