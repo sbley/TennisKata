@@ -145,6 +145,17 @@ public class TennisGameTest {
 		assertThat(game.getScore(), is(equalTo("Advantage P1")));
 	}
 
+	@Test
+	public void getScore_returnsAdvantageP2AfterP2ScoresInSecondDeuce()
+			throws Exception {
+		TennisGame game = gameBetweenP1AndP2();
+		playUntilDeuce(game);
+		game.player2Scores();
+		game.player1Scores();
+		game.player2Scores();
+		assertThat(game.getScore(), is(equalTo("Advantage P2")));
+	}
+
 	private TennisGame gameBetweenP1AndP2() {
 		return new TennisGame("P1", "P2");
 	}
