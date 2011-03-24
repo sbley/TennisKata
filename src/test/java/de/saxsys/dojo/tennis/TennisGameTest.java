@@ -35,4 +35,12 @@ public class TennisGameTest {
 		game.player1Scores();
 		assertThat(game.getScore(), is(equalTo("Thirty Love")));
 	}
+
+	@Test
+	public void getScore_returnsLoveThirtyAfterP2ScoresTwice() throws Exception {
+		TennisGame game = new TennisGame();
+		game.player2Scores();
+		game.player2Scores();
+		assertThat(game.getScore(), is(equalTo("Love Thirty")));
+	}
 }
