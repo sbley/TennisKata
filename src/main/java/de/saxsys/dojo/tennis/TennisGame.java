@@ -7,9 +7,11 @@ public class TennisGame {
 	private int player1Score = 0;
 	private int player2Score = 0;
 	private final String player1;
+	private final String player2;
 
 	public TennisGame(String player1, String player2) {
 		this.player1 = player1;
+		this.player2 = player2;
 	}
 
 	public void player1Scores() {
@@ -27,6 +29,9 @@ public class TennisGame {
 		if (isAdvantagePlayer1()) {
 			return "Advantage " + player1;
 		}
+		if (isAdvantagePlayer2()) {
+			return "Advantage " + player2;
+		}
 		String player1ScoreStr = asString(player1Score);
 		String player2ScoreStr = asString(player2Score);
 		if (haveEqualScore()) {
@@ -41,6 +46,10 @@ public class TennisGame {
 
 	private boolean isAdvantagePlayer1() {
 		return player1Score == 4 && player2Score == 3;
+	}
+
+	private boolean isAdvantagePlayer2() {
+		return player2Score == 4 && player1Score == 3;
 	}
 
 	private boolean haveEqualScore() {

@@ -82,4 +82,18 @@ public class TennisGameTest {
 		game.player1Scores();
 		assertThat(game.getScore(), is(equalTo("Advantage P1")));
 	}
+
+	@Test
+	public void getScore_returnsAdvantageP2AfterP2ScoresInDeuce()
+			throws Exception {
+		TennisGame game = new TennisGame("P1", "P2");
+		game.player1Scores();
+		game.player2Scores();
+		game.player2Scores();
+		game.player1Scores();
+		game.player1Scores();
+		game.player2Scores();
+		game.player2Scores();
+		assertThat(game.getScore(), is(equalTo("Advantage P2")));
+	}
 }
