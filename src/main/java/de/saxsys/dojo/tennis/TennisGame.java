@@ -6,6 +6,11 @@ public class TennisGame {
 			"Thirty", "Fourty" };
 	private int player1Score = 0;
 	private int player2Score = 0;
+	private final String player1;
+
+	public TennisGame(String player1, String player2) {
+		this.player1 = player1;
+	}
 
 	public void player1Scores() {
 		player1Score++;
@@ -18,6 +23,9 @@ public class TennisGame {
 	public String getScore() {
 		if (isDeuce()) {
 			return "Deuce";
+		}
+		if (player1Score == 4 && player2Score == 3) {
+			return "Advantage " + player1;
 		}
 		String player1ScoreStr = asString(player1Score);
 		String player2ScoreStr = asString(player2Score);
