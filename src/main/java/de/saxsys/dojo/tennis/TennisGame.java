@@ -8,8 +8,10 @@ public class TennisGame {
 	public String getScore() {
 		String player1ScoreStr = "Love";
 		String player2ScoreStr = "Love";
-		if (player1Score > 0) {
+		if (player1Score == 1) {
 			player1ScoreStr = "Fifteen";
+		} else if (player1Score == 2) {
+			player1ScoreStr = "Thirty";
 		}
 		if (player2Score > 0) {
 			player2ScoreStr = "Fifteen";
