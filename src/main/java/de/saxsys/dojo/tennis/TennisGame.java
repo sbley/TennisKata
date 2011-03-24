@@ -2,20 +2,16 @@ package de.saxsys.dojo.tennis;
 
 public class TennisGame {
 
+	private static final String[] SCORES = new String[] { "Love", "Fifteen",
+			"Thirty" };
 	private int player1Score = 0;
 	private int player2Score = 0;
 
 	public String getScore() {
 		String player1ScoreStr = "Love";
 		String player2ScoreStr = "Love";
-		if (player1Score == 1) {
-			player1ScoreStr = "Fifteen";
-		} else if (player1Score == 2) {
-			player1ScoreStr = "Thirty";
-		}
-		if (player2Score > 0) {
-			player2ScoreStr = "Fifteen";
-		}
+		player1ScoreStr = SCORES[player1Score];
+		player2ScoreStr = SCORES[player2Score];
 		if (player1Score == player2Score) {
 			return player1ScoreStr + " all";
 		}
