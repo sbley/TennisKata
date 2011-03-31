@@ -88,4 +88,15 @@ public class TennisGameTest {
 		assertThat(tennisGame.score(), is("Player One wins!"));
 	}
 
+	@Test
+	public void scoreIsPlayerTwoWinsAfterPlayerTwoScoresFourTimes() {
+
+		TennisGame tennisGame = new TennisGame();
+		tennisGame.playerTwoScores();
+		tennisGame.playerTwoScores();
+		tennisGame.playerTwoScores();
+		tennisGame.playerTwoScores();
+		assertThat(tennisGame.score(), is("Player One wins!"));
+	}
+
 }
