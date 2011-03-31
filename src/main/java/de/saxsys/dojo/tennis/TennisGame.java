@@ -11,6 +11,12 @@ public class TennisGame {
 
 	public String score() {
 
+		if (scoreOfPlayerOne+scoreOfPlayerTwo > 5) {
+			if (equalScores()) {
+				return "Deuce";				
+			}
+		}
+		
 		if (4 == scoreOfPlayerOne && 3 == scoreOfPlayerTwo) {
 			return "Advantage Player One";
 		}
@@ -19,9 +25,6 @@ public class TennisGame {
 		}
 		
 		if (equalScores()) {
-			if (3 == scoreOfPlayerOne) {
-				return "Deuce";
-			}
 			return SCORES[scoreOfPlayerOne] + " All";
 		}
 		if (4 == scoreOfPlayerOne) {
