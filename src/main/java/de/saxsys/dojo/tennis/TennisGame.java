@@ -17,6 +17,9 @@ public class TennisGame {
 		if (2 == scoreOfPlayerTwo) {
 			return "Love Thirty";
 		}
+		if (3 == scoreOfPlayerTwo) {
+			return "Love Forty";
+		}
 		return "Love Fifteen";
 	}
 
