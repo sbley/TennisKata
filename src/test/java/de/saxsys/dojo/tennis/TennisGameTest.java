@@ -3,6 +3,7 @@ package de.saxsys.dojo.tennis;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 
+import org.junit.Ignore;
 import org.junit.Test;
 
 public class TennisGameTest {
@@ -99,4 +100,17 @@ public class TennisGameTest {
 		assertThat(tennisGame.score(), is("Player One wins!"));
 	}
 
+	@Test
+	@Ignore
+	public void scoreIsDouceAfterBothPlayersScoreThreeTimes() {
+
+		TennisGame tennisGame = new TennisGame();
+		tennisGame.playerOneScores();
+		tennisGame.playerOneScores();
+		tennisGame.playerOneScores();
+		tennisGame.playerTwoScores();
+		tennisGame.playerTwoScores();
+		tennisGame.playerTwoScores();
+		assertThat(tennisGame.score(), is("Deuce"));
+	}
 }

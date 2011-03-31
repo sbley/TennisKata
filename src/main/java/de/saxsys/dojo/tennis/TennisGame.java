@@ -11,7 +11,7 @@ public class TennisGame {
 
 	public String score() {
 
-		if (scoreOfPlayerOne == scoreOfPlayerTwo) {
+		if (equalScores()) {
 			return SCORES[scoreOfPlayerOne] + " All";
 		}
 		if (4 == scoreOfPlayerOne) {
@@ -30,5 +30,9 @@ public class TennisGame {
 
 	public void playerTwoScores() {
 		scoreOfPlayerTwo++;
+	}
+
+	private boolean equalScores() {
+		return scoreOfPlayerOne == scoreOfPlayerTwo;
 	}
 }
