@@ -8,14 +8,14 @@ import org.junit.Test;
 public class TennisGameTest {
 
 	@Test
-	public void scoreIsLoveAllAfterGameStart() throws Exception {
+	public void scoreIsLoveAllAfterGameStart() {
 
 		TennisGame tennisGame = new TennisGame();
 		assertThat(tennisGame.score(), is("Love All"));
 	}
 
 	@Test
-	public void scoreIsFifteenLoveAfterPlayerOneScores() throws Exception {
+	public void scoreIsFifteenLoveAfterPlayerOneScores() {
 
 		TennisGame tennisGame = new TennisGame();
 		tennisGame.playerOneScores();
@@ -23,8 +23,7 @@ public class TennisGameTest {
 	}
 
 	@Test
-	public void scoreIsThirtyLoveAfterPlayerOneScoresTwoTimes()
-			throws Exception {
+	public void scoreIsThirtyLoveAfterPlayerOneScoresTwoTimes() {
 
 		TennisGame tennisGame = new TennisGame();
 		tennisGame.playerOneScores();
@@ -33,8 +32,7 @@ public class TennisGameTest {
 	}
 
 	@Test
-	public void scoreIsFortyLoveAfterPlayerOneScoresThreeTimes()
-			throws Exception {
+	public void scoreIsFortyLoveAfterPlayerOneScoresThreeTimes() {
 
 		TennisGame tennisGame = new TennisGame();
 		tennisGame.playerOneScores();
@@ -44,11 +42,20 @@ public class TennisGameTest {
 	}
 
 	@Test
-	public void scoreIsLoveFifteenAfterPlayerTwoScores() throws Exception {
+	public void scoreIsLoveFifteenAfterPlayerTwoScores() {
 
 		TennisGame tennisGame = new TennisGame();
 		tennisGame.playerTwoScores();
 		assertThat(tennisGame.score(), is("Love Fifteen"));
+	}
+
+	@Test
+	public void scoreIsLoveFifteenAfterPlayerTwoScoresTwoTimes() {
+
+		TennisGame tennisGame = new TennisGame();
+		tennisGame.playerTwoScores();
+		tennisGame.playerTwoScores();
+		assertThat(tennisGame.score(), is("Love Thirty"));
 	}
 
 }
