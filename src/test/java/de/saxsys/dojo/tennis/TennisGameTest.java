@@ -5,27 +5,27 @@ import static org.junit.Assert.assertThat;
 
 import org.junit.Test;
 
-
 public class TennisGameTest {
 
 	@Test
 	public void scoreIsLoveAllAfterGameStart() throws Exception {
-		
+
 		TennisGame tennisGame = new TennisGame();
 		assertThat(tennisGame.score(), is("Love All"));
 	}
 
 	@Test
 	public void scoreIsFifteenLoveAfterPlayerOneScores() throws Exception {
-		
+
 		TennisGame tennisGame = new TennisGame();
 		tennisGame.playerOneScores();
 		assertThat(tennisGame.score(), is("Fifteen Love"));
 	}
 
 	@Test
-	public void scoreIsThirtyLoveAfterPlayerOneScoresTwoTimes() throws Exception {
-		
+	public void scoreIsThirtyLoveAfterPlayerOneScoresTwoTimes()
+			throws Exception {
+
 		TennisGame tennisGame = new TennisGame();
 		tennisGame.playerOneScores();
 		tennisGame.playerOneScores();
@@ -33,12 +33,22 @@ public class TennisGameTest {
 	}
 
 	@Test
-	public void scoreIsFortyLoveAfterPlayerOneScoresTwoTimes() throws Exception {
-		
+	public void scoreIsFortyLoveAfterPlayerOneScoresThreeTimes()
+			throws Exception {
+
 		TennisGame tennisGame = new TennisGame();
 		tennisGame.playerOneScores();
 		tennisGame.playerOneScores();
 		tennisGame.playerOneScores();
 		assertThat(tennisGame.score(), is("Forty Love"));
 	}
+
+	@Test
+	public void scoreIsLoveFifteenAfterPlayerTwoScores() throws Exception {
+
+		TennisGame tennisGame = new TennisGame();
+		tennisGame.playerTwoScores();
+		assertThat(tennisGame.score(), is("Love Fifteen"));
+	}
+
 }

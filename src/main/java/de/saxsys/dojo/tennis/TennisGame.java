@@ -5,14 +5,23 @@ public class TennisGame {
 	private static final String[] SCORES = new String[] { //
 	"Love All", "Fifteen Love", "Thirty Love", "Forty Love" };
 
-	private int wins = 0;
+	private int scoreOfPlayerOne = 0;
+
+	private int scoreOfPlayerTwo = 0;
 
 	public String score() {
-		return SCORES[wins];
+
+		if (0 == scoreOfPlayerTwo) {
+			return SCORES[scoreOfPlayerOne];
+		}
+		return "Love Fifteen";
 	}
 
 	public void playerOneScores() {
-		wins++;
+		scoreOfPlayerOne++;
 	}
 
+	public void playerTwoScores() {
+		scoreOfPlayerTwo++;
+	}
 }
