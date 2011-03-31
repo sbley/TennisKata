@@ -15,10 +15,10 @@ public class TennisGame {
 			if (equalScores()) {
 				return "Deuce";				
 			}
-			if (scoreOfPlayerOne-scoreOfPlayerTwo == 2) {
+			switch (scoreOfPlayerOne-scoreOfPlayerTwo) {
+			case 2:
 				return "Player One wins!";
-			}
-			if (-scoreOfPlayerOne+scoreOfPlayerTwo == 2) {
+			case -2:
 				return "Player Two wins!";
 			}
 			if (scoreOfPlayerOne > scoreOfPlayerTwo) {
