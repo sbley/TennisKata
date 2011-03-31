@@ -1,8 +1,8 @@
 package de.saxsys.dojo.tennis;
 
+import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 
-import org.hamcrest.CoreMatchers;
 import org.junit.Test;
 
 
@@ -12,6 +12,14 @@ public class TennisGameTest {
 	public void scoreIsLoveAllAfterGameStart() throws Exception {
 		
 		TennisGame tennisGame = new TennisGame();
-		assertThat(tennisGame.score(), CoreMatchers.is("Love All"));
+		assertThat(tennisGame.score(), is("Love All"));
+	}
+
+	@Test
+	public void scoreIsFifteenLoveAfterPlayerOneScores() throws Exception {
+		
+		TennisGame tennisGame = new TennisGame();
+		tennisGame.playerOneScores();
+		assertThat(tennisGame.score(), is("Fifteen Love"));
 	}
 }
