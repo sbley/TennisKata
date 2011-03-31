@@ -125,6 +125,16 @@ public class TennisGameTest {
 		assertThat(tennisGame.score(), is("Advantage Player Two"));
 	}
 
+	@Test
+	public void scoreIsDeuceAfterDeuceAndBothPlayersScoreAgain() {
+		
+		TennisGame tennisGame = new TennisGame();
+		deuce(tennisGame);
+		tennisGame.playerOneScores();
+		tennisGame.playerTwoScores();
+		assertThat(tennisGame.score(), is("Deuce"));
+	}
+
 	private void deuce(TennisGame tennisGame) {
 		tennisGame.playerOneScores();
 		tennisGame.playerOneScores();
