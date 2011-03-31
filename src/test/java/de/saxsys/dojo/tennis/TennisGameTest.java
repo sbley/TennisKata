@@ -159,15 +159,13 @@ public class TennisGameTest {
 	}
 	
 	@Test
-	@Ignore
 	public void scoreIsPlayerOneWinsAfterDeuceAndPlayersOneScoresTwoTimes() {
 		
 		TennisGame tennisGame = new TennisGame();
 		deuce(tennisGame);
 		tennisGame.playerOneScores();
-		tennisGame.playerTwoScores();
-		tennisGame.playerTwoScores();
-		assertThat(tennisGame.score(), is("Advantage Player Two"));
+		tennisGame.playerOneScores();
+		assertThat(tennisGame.score(), is("Player One wins!"));
 	}
 
 	private void deuce(TennisGame tennisGame) {
