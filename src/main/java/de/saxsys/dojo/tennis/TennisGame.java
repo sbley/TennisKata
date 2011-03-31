@@ -11,8 +11,8 @@ public class TennisGame {
 
 	public String score() {
 
-		if (0 == scoreOfPlayerOne && 0 == scoreOfPlayerTwo) {
-			return "Love All";
+		if (scoreOfPlayerOne == scoreOfPlayerTwo) {
+			return SCORES[scoreOfPlayerOne] + " All";
 		}
 		return SCORES[scoreOfPlayerOne] + " " + SCORES[scoreOfPlayerTwo];
 	}

@@ -68,4 +68,13 @@ public class TennisGameTest {
 		assertThat(tennisGame.score(), is("Love Forty"));
 	}
 
+	@Test
+	public void scoreIsFifteenAllAfterBothPlayersScored() {
+
+		TennisGame tennisGame = new TennisGame();
+		tennisGame.playerOneScores();
+		tennisGame.playerTwoScores();
+		assertThat(tennisGame.score(), is("Fifteen All"));
+	}
+
 }
