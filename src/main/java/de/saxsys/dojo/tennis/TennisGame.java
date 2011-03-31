@@ -14,6 +14,9 @@ public class TennisGame {
 		if (4 == scoreOfPlayerOne && 3 == scoreOfPlayerTwo) {
 			return "Advantage Player One";
 		}
+		if (3 == scoreOfPlayerOne && 4 == scoreOfPlayerTwo) {
+			return "Advantage Player Two";
+		}
 		
 		if (equalScores()) {
 			if (3 == scoreOfPlayerOne) {
