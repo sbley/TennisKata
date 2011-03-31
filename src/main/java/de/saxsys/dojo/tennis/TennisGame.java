@@ -12,14 +12,13 @@ public class TennisGame {
 	public String score() {
 
 		if (isDeuceOrAdvantage()) {
-			if (equalScores()) {
-				return "Deuce";				
-			}
 			switch (scoreOfPlayerOne-scoreOfPlayerTwo) {
 			case 2:
 				return "Player One wins!";
 			case 1:
 				return "Advantage Player One";
+			case 0:
+				return "Deuce";				
 			case -1:				
 				return "Advantage Player Two";
 			case -2:
