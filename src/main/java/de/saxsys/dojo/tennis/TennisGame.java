@@ -18,7 +18,7 @@ public class TennisGame {
 			if (scoreOfPlayerOne > scoreOfPlayerTwo) {
 				return "Advantage Player One";
 			}
-			if (3 == scoreOfPlayerOne && 4 == scoreOfPlayerTwo) {
+			if (scoreOfPlayerOne < scoreOfPlayerTwo) {
 				return "Advantage Player Two";
 			}
 		}
