@@ -2,6 +2,8 @@ package de.saxsys.dojo.tennis;
 
 public class TennisGame {
 
+	private static final int DISTANCE_OFFSET = 2;
+
 	private static final String[] SCORES = new String[] { //
 	"Love", "Fifteen", "Thirty", "Forty" };
 
@@ -14,10 +16,9 @@ public class TennisGame {
 
 	public String score() {
 
-		if (isDeuceOrAdvantage()) {
-			return DEUCE_SCORES[distanceBetweenScores()+2];
-		}
-		
+		if (isAtLeastDeuce()) {
+			return DEUCE_SCORES[distanceBetweenScores()+DISTANCE_OFFSET];
+		}		
 		if (equalScores()) {
 			return SCORES[scoreOfPlayerOne] + " All";
 		}
@@ -27,7 +28,6 @@ public class TennisGame {
 		if (4 == scoreOfPlayerTwo) {
 			return "Player Two wins!";
 		}
-
 		return SCORES[scoreOfPlayerOne] + " " + SCORES[scoreOfPlayerTwo];
 	}
 
@@ -39,7 +39,7 @@ public class TennisGame {
 		scoreOfPlayerTwo++;
 	}
 
-	private boolean isDeuceOrAdvantage() {
+	private boolean isAtLeastDeuce() {
 		return scoreOfPlayerOne+scoreOfPlayerTwo > 5;
 	}
 
