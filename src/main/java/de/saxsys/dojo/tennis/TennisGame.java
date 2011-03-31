@@ -12,7 +12,7 @@ public class TennisGame {
 	public String score() {
 
 		if (isDeuceOrAdvantage()) {
-			switch (scoreOfPlayerOne-scoreOfPlayerTwo) {
+			switch (distanceBetweenScores()) {
 			case 2:
 				return "Player One wins!";
 			case 1:
@@ -39,8 +39,13 @@ public class TennisGame {
 		return SCORES[scoreOfPlayerOne] + " " + SCORES[scoreOfPlayerTwo];
 	}
 
+
 	private boolean isDeuceOrAdvantage() {
 		return scoreOfPlayerOne+scoreOfPlayerTwo > 5;
+	}
+
+	private int distanceBetweenScores() {
+		return scoreOfPlayerOne-scoreOfPlayerTwo;
 	}
 
 	public void playerOneScores() {
