@@ -18,14 +18,12 @@ public class TennisGame {
 			switch (scoreOfPlayerOne-scoreOfPlayerTwo) {
 			case 2:
 				return "Player One wins!";
+			case 1:
+				return "Advantage Player One";
+			case -1:				
+				return "Advantage Player Two";
 			case -2:
 				return "Player Two wins!";
-			}
-			if (scoreOfPlayerOne > scoreOfPlayerTwo) {
-				return "Advantage Player One";
-			}
-			if (scoreOfPlayerOne < scoreOfPlayerTwo) {
-				return "Advantage Player Two";
 			}
 		}
 		
