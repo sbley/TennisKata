@@ -18,6 +18,9 @@ public class TennisGame {
 			if (scoreOfPlayerOne-scoreOfPlayerTwo == 2) {
 				return "Player One wins!";
 			}
+			if (-scoreOfPlayerOne+scoreOfPlayerTwo == 2) {
+				return "Player Two wins!";
+			}
 			if (scoreOfPlayerOne > scoreOfPlayerTwo) {
 				return "Advantage Player One";
 			}
