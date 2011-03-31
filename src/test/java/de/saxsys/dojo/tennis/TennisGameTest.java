@@ -100,15 +100,28 @@ public class TennisGameTest {
 	}
 
 	@Test
-	public void scoreIsDouceAfterBothPlayersScoreThreeTimes() {
+	public void scoreIsDeuceAfterBothPlayersScoreThreeTimes() {
 
 		TennisGame tennisGame = new TennisGame();
-		tennisGame.playerOneScores();
-		tennisGame.playerOneScores();
-		tennisGame.playerOneScores();
-		tennisGame.playerTwoScores();
-		tennisGame.playerTwoScores();
-		tennisGame.playerTwoScores();
+		deuce(tennisGame);
 		assertThat(tennisGame.score(), is("Deuce"));
+	}
+
+	@Test
+	public void scoreIsAdvantagePlayerOneAfterDeuceAndPlayerSores() {
+		
+		TennisGame tennisGame = new TennisGame();
+		deuce(tennisGame);
+		tennisGame.playerOneScores();
+		assertThat(tennisGame.score(), is("Advantage Player One"));
+	}
+
+	private void deuce(TennisGame tennisGame) {
+		tennisGame.playerOneScores();
+		tennisGame.playerOneScores();
+		tennisGame.playerOneScores();
+		tennisGame.playerTwoScores();
+		tennisGame.playerTwoScores();
+		tennisGame.playerTwoScores();
 	}
 }

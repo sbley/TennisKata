@@ -11,6 +11,10 @@ public class TennisGame {
 
 	public String score() {
 
+		if (4 == scoreOfPlayerOne && 3 == scoreOfPlayerTwo) {
+			return "Advantage Player One";
+		}
+		
 		if (equalScores()) {
 			if (3 == scoreOfPlayerOne) {
 				return "Deuce";
