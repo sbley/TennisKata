@@ -15,14 +15,14 @@ public class TennisGame {
 			if (equalScores()) {
 				return "Deuce";				
 			}
+			if (4 == scoreOfPlayerOne && 3 == scoreOfPlayerTwo) {
+				return "Advantage Player One";
+			}
+			if (3 == scoreOfPlayerOne && 4 == scoreOfPlayerTwo) {
+				return "Advantage Player Two";
+			}
 		}
 		
-		if (4 == scoreOfPlayerOne && 3 == scoreOfPlayerTwo) {
-			return "Advantage Player One";
-		}
-		if (3 == scoreOfPlayerOne && 4 == scoreOfPlayerTwo) {
-			return "Advantage Player Two";
-		}
 		
 		if (equalScores()) {
 			return SCORES[scoreOfPlayerOne] + " All";
