@@ -24,7 +24,7 @@ public class TennisGameTest {
 	}
 
 	@Test
-	public void scoreIsFifteenLoveAfterPlayerOneScoresTwoTimes() throws Exception {
+	public void scoreIsThirtyLoveAfterPlayerOneScoresTwoTimes() throws Exception {
 		
 		TennisGame tennisGame = new TennisGame();
 		tennisGame.playerOneScores();
