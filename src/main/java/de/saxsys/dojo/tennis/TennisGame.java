@@ -5,6 +5,9 @@ public class TennisGame {
 	private static final String[] SCORES = new String[] { //
 	"Love", "Fifteen", "Thirty", "Forty" };
 
+	private static final String[] DEUCE_SCORES = new String[] { //
+		"Player One wins!", "Advantage Player One", "Deuce", "Advantage Player Two", "Player Two wins!"};
+
 	private int scoreOfPlayerOne = 0;
 
 	private int scoreOfPlayerTwo = 0;
@@ -12,18 +15,7 @@ public class TennisGame {
 	public String score() {
 
 		if (isDeuceOrAdvantage()) {
-			switch (distanceBetweenScores()) {
-			case 2:
-				return "Player One wins!";
-			case 1:
-				return "Advantage Player One";
-			case 0:
-				return "Deuce";				
-			case -1:				
-				return "Advantage Player Two";
-			case -2:
-				return "Player Two wins!";
-			}
+			return DEUCE_SCORES[distanceBetweenScores()+2];
 		}
 		
 		if (equalScores()) {
@@ -39,21 +31,20 @@ public class TennisGame {
 		return SCORES[scoreOfPlayerOne] + " " + SCORES[scoreOfPlayerTwo];
 	}
 
-
-	private boolean isDeuceOrAdvantage() {
-		return scoreOfPlayerOne+scoreOfPlayerTwo > 5;
-	}
-
-	private int distanceBetweenScores() {
-		return scoreOfPlayerOne-scoreOfPlayerTwo;
-	}
-
 	public void playerOneScores() {
 		scoreOfPlayerOne++;
 	}
 
 	public void playerTwoScores() {
 		scoreOfPlayerTwo++;
+	}
+
+	private boolean isDeuceOrAdvantage() {
+		return scoreOfPlayerOne+scoreOfPlayerTwo > 5;
+	}
+
+	private int distanceBetweenScores() {
+		return scoreOfPlayerTwo-scoreOfPlayerOne;
 	}
 
 	private boolean equalScores() {
