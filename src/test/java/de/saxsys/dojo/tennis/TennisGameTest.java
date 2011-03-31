@@ -31,4 +31,14 @@ public class TennisGameTest {
 		tennisGame.playerOneScores();
 		assertThat(tennisGame.score(), is("Thirty Love"));
 	}
+
+	@Test
+	public void scoreIsFortyLoveAfterPlayerOneScoresTwoTimes() throws Exception {
+		
+		TennisGame tennisGame = new TennisGame();
+		tennisGame.playerOneScores();
+		tennisGame.playerOneScores();
+		tennisGame.playerOneScores();
+		assertThat(tennisGame.score(), is("Forty Love"));
+	}
 }

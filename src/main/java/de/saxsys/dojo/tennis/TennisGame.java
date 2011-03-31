@@ -10,6 +10,8 @@ public class TennisGame {
 			score = "Fifteen Love";
 		} else if (2 == wins) {
 			score = "Thirty Love";
+		} else if (3 == wins ) {
+			score = "Forty Love";
 		}
 		return score;
 	}
