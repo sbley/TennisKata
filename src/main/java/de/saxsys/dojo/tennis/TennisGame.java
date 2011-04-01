@@ -16,17 +16,18 @@ public class TennisGame {
 
 	public String score() {
 
+		if (hasWinner()) {
+			if (distanceBetweenScores()<0) {
+				return "Player One wins!";				
+			} else {				
+				return "Player Two wins!";
+			}
+		}		
 		if (isAtLeastDeuce()) {
 			return DEUCE_SCORES[distanceBetweenScores()+DISTANCE_OFFSET];
 		}		
 		if (equalScores()) {
 			return SCORES[scoreOfPlayerOne] + " All";
-		}
-		if (4 == scoreOfPlayerOne) {
-			return "Player One wins!";
-		}
-		if (4 == scoreOfPlayerTwo) {
-			return "Player Two wins!";
 		}
 		return SCORES[scoreOfPlayerOne] + " " + SCORES[scoreOfPlayerTwo];
 	}
@@ -43,6 +44,10 @@ public class TennisGame {
 		return scoreOfPlayerOne+scoreOfPlayerTwo > 5;
 	}
 
+	private boolean hasWinner() {
+		return scoreOfPlayerOne+scoreOfPlayerTwo > 3 && Math.abs(distanceBetweenScores()) >= 2;
+	}
+	
 	private int distanceBetweenScores() {
 		return scoreOfPlayerTwo-scoreOfPlayerOne;
 	}
