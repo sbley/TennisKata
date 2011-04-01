@@ -41,12 +41,15 @@ public class TennisGame {
 	}
 
 	private boolean isAtLeastDeuce() {
-		return scoreOfPlayerOne + scoreOfPlayerTwo > 5;
+		return sumOfScores() > 5;
 	}
 
 	private boolean hasWinner() {
-		return scoreOfPlayerOne + scoreOfPlayerTwo > 3
-				&& Math.abs(distanceBetweenScores()) >= 2;
+		return sumOfScores() > 3 && Math.abs(distanceBetweenScores()) >= 2;
+	}
+
+	private int sumOfScores() {
+		return scoreOfPlayerOne + scoreOfPlayerTwo;
 	}
 
 	private int distanceBetweenScores() {
