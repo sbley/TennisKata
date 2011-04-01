@@ -2,13 +2,13 @@ package de.saxsys.dojo.tennis;
 
 public class TennisGame {
 
-	private static final int DISTANCE_OFFSET = 2;
+	private static final int DISTANCE_OFFSET = 1;
 
 	private static final String[] SCORES = new String[] { //
 	"Love", "Fifteen", "Thirty", "Forty" };
 
 	private static final String[] DEUCE_SCORES = new String[] { //
-		"Player One wins!", "Advantage Player One", "Deuce", "Advantage Player Two", "Player Two wins!"};
+	"Advantage Player One", "Deuce", "Advantage Player Two" };
 
 	private int scoreOfPlayerOne = 0;
 
@@ -17,15 +17,15 @@ public class TennisGame {
 	public String score() {
 
 		if (hasWinner()) {
-			if (distanceBetweenScores()<0) {
-				return "Player One wins!";				
-			} else {				
+			if (distanceBetweenScores() < 0) {
+				return "Player One wins!";
+			} else {
 				return "Player Two wins!";
 			}
-		}		
+		}
 		if (isAtLeastDeuce()) {
-			return DEUCE_SCORES[distanceBetweenScores()+DISTANCE_OFFSET];
-		}		
+			return DEUCE_SCORES[distanceBetweenScores() + DISTANCE_OFFSET];
+		}
 		if (equalScores()) {
 			return SCORES[scoreOfPlayerOne] + " All";
 		}
@@ -41,15 +41,16 @@ public class TennisGame {
 	}
 
 	private boolean isAtLeastDeuce() {
-		return scoreOfPlayerOne+scoreOfPlayerTwo > 5;
+		return scoreOfPlayerOne + scoreOfPlayerTwo > 5;
 	}
 
 	private boolean hasWinner() {
-		return scoreOfPlayerOne+scoreOfPlayerTwo > 3 && Math.abs(distanceBetweenScores()) >= 2;
+		return scoreOfPlayerOne + scoreOfPlayerTwo > 3
+				&& Math.abs(distanceBetweenScores()) >= 2;
 	}
-	
+
 	private int distanceBetweenScores() {
-		return scoreOfPlayerTwo-scoreOfPlayerOne;
+		return scoreOfPlayerTwo - scoreOfPlayerOne;
 	}
 
 	private boolean equalScores() {
